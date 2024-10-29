@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background: #4CAF50; /* Green */
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        h2 {
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 0.5rem;
+        }
+
+        .portfolio-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between items */
+        }
+
+        .portfolio-item {
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 1rem;
+            flex: 1 1 30%; /* Responsive layout */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-item h3 {
+            color: #4CAF50;
+        }
+
+        section {
+            margin-bottom: 2rem;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        .mySlides {
+            display: none;
+            width: 100%;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <nav>
+            <ul>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Slideshow container -->
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="images (1).jpg" alt="Slide 1" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="desktop-wallpaper-png-barney-the-dinosaur-1-barny-the-dinosaur.jpg" alt="Slide 2" style="width:100%">
+            </div>
+            <div class="mySlides">
+                <img src="Barny_5529.jpg" alt="Slide 3" style="width:100%">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+
+        <section id="portfolio">
+            <h2>Gaudencia's Portfolio</h2>
+            <div class="portfolio-items">
+                <div class="portfolio-item">
+                    <h3>Hello there!</h3>
+                    <p>My name is Gaudencia S.O</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>Now I am in grade 11</h3>
+                    <p>Stella Maris Gading Serpong</p>
+                </div>
+                <div class="portfolio-item">
+                    <h3>My favourite quote is:</h3>
+                    <p>Tee Hee Tee Hee</p>
+                </div>
+                <!-- Add more portfolio items as needed -->
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I like tomato</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>0812 9999 9999</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Goden. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            const slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            slides[slideIndex - 1].style.display = "block";  
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+
+        function plusSlides(n) {
+            const slides = document.getElementsByClassName("mySlides");
+            slideIndex += n;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex - 1].style.display = "block";  
+        }
+    </script>
+</body>
+</html>
